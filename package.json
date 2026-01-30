@@ -8,7 +8,7 @@
     ],
     "scripts": {
         "start:backend": "npm run start:dev --workspace=apps/backend-server",
-        "start:mobile": "npm run start --workspace=apps/mobile-app",
+        "start:mobile": "cd apps/mobile_app_flutter && flutter run",
         "build:backend": "npm run build --workspace=apps/backend-server"
     }
 }

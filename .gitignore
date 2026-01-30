@@ -27,6 +27,16 @@ yarn-error.log*
 .expo/
 web-build/
 
+# Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/apps/mobile_app_flutter/build/
+
 # VS Code
 .vscode/
 *.code-workspace
+.history/

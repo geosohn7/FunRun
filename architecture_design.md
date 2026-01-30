@@ -13,7 +13,7 @@ FunRun is a gamified running application that transforms ordinary running into a
 
 ## 3. Tech Stack
 - **Backend:** NestJS (TypeScript), PostgreSQL (TypeORM), WebSockets for real-time updates.
-- **Mobile:** React Native (Expo) for cross-platform support.
+- **Mobile:** Flutter (Dart) for high-performance cross-platform support.
 - **Admin Panel:** React-based dashboard for managing quests and monitoring users.
 
 ## 4. System Components
@@ -22,10 +22,10 @@ FunRun is a gamified running application that transforms ordinary running into a
 - **Users Module:** Manages profiles, tiers, and progression data.
 - **Quests Module:** (Future) Manages quest logic and triggers.
 
-### Mobile App (`apps/mobile-app`)
-- **Map Interaction:** Using `react-native-maps`.
-- **Location Tracking:** Background GPS tracking.
-- **State Management:** (Future) Redux or React Query for sync.
+### Mobile App (`apps/mobile-app-flutter`)
+- **Map Interaction:** Using `google_maps_flutter`.
+- **Location Tracking:** Background GPS tracking with `geolocator`.
+- **State Management:** Provider or Riverpod.
 
 ### Shared Packages (`packages/`)
 - **Types:** Shared DTOs and interfaces.
