@@ -10,21 +10,21 @@ export class RunsController {
     constructor(private readonly runsService: RunsService) { }
 
     @Post('start')
-    startRun(@Body('userId') userId: string) {
-        return this.runsService.startRun(userId);
+    async startRun(@Body('userId') userId: string) {
+        return await this.runsService.startRun(userId);
     }
 
     @Post('update')
-    updateRun(
+    async updateRun(
         @Body('runId') runId: string,
         @Body('latitude') lat: number,
         @Body('longitude') lng: number,
     ) {
-        return this.runsService.processLocation(runId, lat, lng);
+        return await this.runsService.processLocation(runId, lat, lng);
     }
 
     @Post('stop')
-    stopRun(@Body('runId') runId: string) {
-        return this.runsService.stopRun(runId);
+    async stopRun(@Body('runId') runId: string) {
+        return await this.runsService.stopRun(runId);
     }
 }

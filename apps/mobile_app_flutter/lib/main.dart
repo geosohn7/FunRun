@@ -51,7 +51,7 @@ class _MapScreenState extends State<MapScreen> {
   Timer? _timer;
 
   // Backend Config
-  final String _backendUrl = 'http://10.0.2.2:3000';
+  final String _backendUrl = 'http://10.220.128.153:3000';
 
   @override
   void initState() {

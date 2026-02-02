@@ -1,17 +1,33 @@
 # FunRun Project
 
-This project uses a Monorepo structure.
+This project is a gamified running application built using a **Monorepo** structure. It combines a mobile client for runners and a backend server for tracking and gamification logic.
 
-## Structure
+## 🚀 Tech Stack
 
-### Apps
-*   **apps/mobile-app**: React Native (Expo) application for the client.
-*   **apps/backend-server**: NestJS server for API and WebSocket.
-*   **apps/admin-panel**: Web dashboard for management.
+### core
+- **Monorepo Manager:** NPM Workspaces
+- **Languages:** TypeScript (Backend/Shared), Dart (Mobile)
 
-### Packages (Shared)
-*   **packages/types**: Shared TypeScript interfaces and DTOs.
-*   **packages/utils**: Shared utility functions (e.g., Geo-calculation).
+### Apps (`/apps`)
+- **📱 Mobile App (`apps/mobile_app_flutter`)**: built with **Flutter (Dart)**.
+  - Key libraries: `google_maps_flutter`, `geolocator`, `http`.
+- **💻 Backend Server (`apps/backend-server`)**: built with **NestJS (TypeScript)**.
+  - Database: **PostgreSQL** with **TypeORM**.
+- **🛠 Admin Panel (`apps/admin-panel`)**: (In progress) Intended for web-based dashboarding.
 
-## Getting Started
-See `architecture_design.md` for the detailed architectural plan.
+### Packages (`/packages`) - Shared Logic
+- **📦 types**: Shared TypeScript interfaces, DTOs, and enums.
+- **🛠 utils**: Shared utility functions (e.g., Haversine formula for distance calculation).
+
+## 🛠 Getting Started
+
+1.  **Backend**:
+    ```bash
+    npm run start:backend
+    ```
+2.  **Mobile**:
+    ```bash
+    npm run start:mobile
+    ```
+
+For detailed architectural decisions, see `architecture_design.md`.

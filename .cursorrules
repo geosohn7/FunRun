@@ -4,3 +4,17 @@ When introducing new algorithms, libraries, concepts, or imports:
 2.  **Explain the "How":** Provide a simple, high-level explanation of how it works (educational tone).
 3.  **Relate to known concepts:** If possible, use analogies or relate it to basic Python or general coding concepts.
 4.  **Avoid Jargon:** Keep technical jargon to a minimum or explain it immediately.
+
+---
+
+## 🛠 Project Tech Stack (Summary for AI)
+- **Structure:** Monorepo using NPM Workspaces.
+- **Backend:** NestJS (TypeScript) in `apps/backend-server`. uses TypeORM with PostgreSQL.
+- **Mobile:** Flutter (Dart) in `apps/mobile_app_flutter`. Focuses on GPS and Google Maps.
+- **Shared:** Common DTOs and Utils in `/packages`.
+
+## 🤖 AI Development Guidelines
+1.  **Monorepo Awareness:** Always check if a change in `packages/types` affects both `backend-server` and `mobile_app_flutter`.
+2.  **Pathing:** Use absolute paths or correct workspace-relative paths. Avoid relative imports across different apps/packages.
+3.  **Cross-Language Consistency:** Ensure that DTO changes in TypeScript (`packages/types`) are reflected in Dart models in Flutter as needed.
+4.  **Database:** We use PostgreSQL via TypeORM. migrations should be handled carefully.
