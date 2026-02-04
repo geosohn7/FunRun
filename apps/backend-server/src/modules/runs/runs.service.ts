@@ -2,12 +2,14 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Run } from './entities/run.entity';
+import { UsersService } from '../users/users.service';
 
 @Injectable()
 export class RunsService {
     constructor(
         @InjectRepository(Run)
         private runRepository: Repository<Run>,
+        private usersService: UsersService,
     ) { }
 
     async startRun(userId: string) {
@@ -50,6 +52,9 @@ export class RunsService {
         run.status = 'COMPLETED';
         run.endedAt = new Date();
         await this.runRepository.save(run);
+
+        // Update User Stats (Convert meters to km for stats)
+        await this.usersService.updateUserStats(run.userId, run.distance / 1000);
 
         return { status: 'ENDED', finalDistance: run.distance, summary: 'Great job!' };
     }
